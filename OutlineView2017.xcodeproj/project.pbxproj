@@ -13,6 +13,10 @@
 		ADB2195B1F3E34C300B6666C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB2195A1F3E34C300B6666C /* Assets.xcassets */; };
 		ADB2195E1F3E34C300B6666C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB2195C1F3E34C300B6666C /* Main.storyboard */; };
 		ADB219691F3E34C300B6666C /* OutlineView2017Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB219681F3E34C300B6666C /* OutlineView2017Tests.m */; };
+		ADB219751F3E355000B6666C /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB219741F3E355000B6666C /* Feed.m */; };
+		ADB219781F3E356500B6666C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB219771F3E356500B6666C /* FeedItem.m */; };
+		ADB2197B1F3E35C100B6666C /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB2197A1F3E35C100B6666C /* Feeds.plist */; };
+		ADB2197E1F3E483E00B6666C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2197D1F3E483E00B6666C /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,12 @@
 		ADB219641F3E34C300B6666C /* OutlineView2017Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutlineView2017Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB219681F3E34C300B6666C /* OutlineView2017Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutlineView2017Tests.m; sourceTree = "<group>"; };
 		ADB2196A1F3E34C300B6666C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADB219731F3E355000B6666C /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		ADB219741F3E355000B6666C /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		ADB219761F3E356500B6666C /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedItem.h; path = ../FeedItem.h; sourceTree = "<group>"; };
+		ADB219771F3E356500B6666C /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedItem.m; path = ../FeedItem.m; sourceTree = "<group>"; };
+		ADB2197A1F3E35C100B6666C /* Feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
+		ADB2197D1F3E483E00B6666C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB2197E1F3E483E00B6666C /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,7 @@
 				ADB219501F3E34C300B6666C /* OutlineView2017 */,
 				ADB219671F3E34C300B6666C /* OutlineView2017Tests */,
 				ADB2194F1F3E34C300B6666C /* Products */,
+				ADB2197C1F3E483D00B6666C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +91,13 @@
 		ADB219501F3E34C300B6666C /* OutlineView2017 */ = {
 			isa = PBXGroup;
 			children = (
+				ADB2195C1F3E34C300B6666C /* Main.storyboard */,
 				ADB219511F3E34C300B6666C /* AppDelegate.h */,
 				ADB219521F3E34C300B6666C /* AppDelegate.m */,
 				ADB219571F3E34C300B6666C /* ViewController.h */,
 				ADB219581F3E34C300B6666C /* ViewController.m */,
-				ADB2195A1F3E34C300B6666C /* Assets.xcassets */,
-				ADB2195C1F3E34C300B6666C /* Main.storyboard */,
-				ADB2195F1F3E34C300B6666C /* Info.plist */,
+				ADB2197A1F3E35C100B6666C /* Feeds.plist */,
+				ADB219791F3E358600B6666C /* Model */,
 				ADB219541F3E34C300B6666C /* Supporting Files */,
 			);
 			path = OutlineView2017;
@@ -94,6 +106,8 @@
 		ADB219541F3E34C300B6666C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ADB2195A1F3E34C300B6666C /* Assets.xcassets */,
+				ADB2195F1F3E34C300B6666C /* Info.plist */,
 				ADB219551F3E34C300B6666C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -106,6 +120,25 @@
 				ADB2196A1F3E34C300B6666C /* Info.plist */,
 			);
 			path = OutlineView2017Tests;
+			sourceTree = "<group>";
+		};
+		ADB219791F3E358600B6666C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADB219731F3E355000B6666C /* Feed.h */,
+				ADB219741F3E355000B6666C /* Feed.m */,
+				ADB219761F3E356500B6666C /* FeedItem.h */,
+				ADB219771F3E356500B6666C /* FeedItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ADB2197C1F3E483D00B6666C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADB2197D1F3E483E00B6666C /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +227,7 @@
 			files = (
 				ADB2195B1F3E34C300B6666C /* Assets.xcassets in Resources */,
 				ADB2195E1F3E34C300B6666C /* Main.storyboard in Resources */,
+				ADB2197B1F3E35C100B6666C /* Feeds.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB219591F3E34C300B6666C /* ViewController.m in Sources */,
+				ADB219781F3E356500B6666C /* FeedItem.m in Sources */,
+				ADB219751F3E355000B6666C /* Feed.m in Sources */,
 				ADB219561F3E34C300B6666C /* main.m in Sources */,
 				ADB219531F3E34C300B6666C /* AppDelegate.m in Sources */,
 			);

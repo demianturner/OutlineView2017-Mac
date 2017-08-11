@@ -7,9 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
+#import "Feed.h"
 
 @interface ViewController : NSViewController
 
+@property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet WKWebView *webView;
+@property (nonatomic, strong) NSMutableArray<Feed *> *feeds;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
