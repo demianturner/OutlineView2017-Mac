@@ -24,6 +24,7 @@
     if (filePath) {
         self.feeds = [Feed feedList:filePath];
         NSLog(@"feeds: %@", self.feeds);
+        [self.outlineView reloadData];
     }
 }
 
